@@ -4,11 +4,11 @@
 
 int main()
 {
-    Node* n0 = new Node[0];
-    Node* n1 = new Node[1];
-    Node* n2 = new Node[3];
-    Node* n3 = new Node[4];
-    Node* n4 = new Node[5];
+    Node* n0 = new Node();
+    Node* n1 = new Node();
+    Node* n2 = new Node();
+    Node* n3 = new Node();
+    Node* n4 = new Node();
 
     DoublyLinkedList list;
 
