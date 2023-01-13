@@ -4,19 +4,22 @@
 
 int main()
 {
-    Node* n0 = new Node();
-    Node* n1 = new Node();
-    Node* n2 = new Node();
-    Node* n3 = new Node();
-    Node* n4 = new Node();
+    Node* n0 = new Node(0);
+    Node* n1 = new Node(1);
+    Node* n2 = new Node(2);
+    Node* n3 = new Node(3);
+    Node* n4 = new Node(4);
+    DoublyLinkedList list = {};
 
-    DoublyLinkedList list;
-
+    /*
     list.add(n0, 0);
-    //list.Add(&n1, 10); //should be a false or -1 (error/invalid) 
-    //list.Add(nullptr, 1); //should be a false or -1 (error/invalid) 
     list.add(n1, 1);
-    //list.Remove(3); //should be a false or -1 (error/invalid) 
+    list.add(n2, 2);
+
+    list.add(n1, 10); //should be a false or -1 (error/invalid) 
+    list.add(nullptr, 1); //should be a false or -1 (error/invalid) 
+    list.add(n1, 1);
+    list.remove(3); //should be a false or -1 (error/invalid) 
     list.add(n2, 2);
     list.display_forward();
     list.add(n3, 1);
@@ -24,13 +27,14 @@ int main()
     list.remove(2);
     list.display_forward();
     list.display_backward();
-    //list.Search(&n4); //should be a false or -1 (error/invalid) 
+    list.search(n4); //should be a false or -1 (error/invalid) 
     list.search(n3);
-    //list.Replace(&n3, nullptr); //should be a false or -1 (error/invalid) 
-    //list.Replace(&n5, &n4); //should be a false or -1 (error/invalid) 
+    list.replace(n3, nullptr); //should be a false or -1 (error/invalid) 
+    list.replace(n5, n4); //should be a false or -1 (error/invalid) 
     list.replace(n3, n4);
     list.display_forward();
     list.size();
+    */
 
 }
 

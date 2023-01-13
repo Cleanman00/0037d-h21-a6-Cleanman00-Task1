@@ -1,11 +1,12 @@
 #pragma once
 
 class Node {
-public:
-	int value;
+private:
+	int data;
 	Node* next;
 	Node* previous;
-
+public:
+	Node(int inData);
 	int getData();
 	void setData(int data);
 	Node* getNext();
@@ -15,11 +16,13 @@ public:
 };
 
 class DoublyLinkedList {
-public:
+private:
+	
 	Node* head;
 	Node* tail;
-
-	bool add(Node* data, int pos);
+	int sizeList = 0;
+public:
+	bool add(Node *data, int pos);
 	bool remove(int pos);
 	bool replace(Node *old, Node *naw);
 	int search(Node* data);
