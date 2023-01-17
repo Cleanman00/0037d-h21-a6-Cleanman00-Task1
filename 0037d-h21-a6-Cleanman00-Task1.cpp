@@ -1,6 +1,7 @@
 // 0037d-h21-a6-Cleanman00-Task1.cpp : This file contains the 'main' function. Program execution begins and ends there.
 #include "Header.h"
 #include <iostream>
+using namespace std;
 
 int main()
 {
@@ -9,13 +10,11 @@ int main()
     Node* n2 = new Node(2);
     Node* n3 = new Node(3);
     Node* n4 = new Node(4);
-    DoublyLinkedList list = {};
+    Node* n5 = 0;
 
-    /*
+    DoublyLinkedList list;
+
     list.add(n0, 0);
-    list.add(n1, 1);
-    list.add(n2, 2);
-
     list.add(n1, 10); //should be a false or -1 (error/invalid) 
     list.add(nullptr, 1); //should be a false or -1 (error/invalid) 
     list.add(n1, 1);
@@ -24,7 +23,7 @@ int main()
     list.display_forward();
     list.add(n3, 1);
     list.display_forward();
-    list.remove(2);
+    list.remove(1);
     list.display_forward();
     list.display_backward();
     list.search(n4); //should be a false or -1 (error/invalid) 
@@ -34,7 +33,7 @@ int main()
     list.replace(n3, n4);
     list.display_forward();
     list.size();
-    */
+    
 
 }
 
