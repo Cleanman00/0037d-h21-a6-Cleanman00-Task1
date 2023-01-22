@@ -43,15 +43,6 @@ bool DoublyLinkedList::add(Node* node, int pos) {
 		cout << "new node has been added" << endl;
 		return true;
 	}
-	
-	/*
-	if (pos == 0) {
-		head->setPrev(node);
-		head = head->getPrev();
-		node->setPrev(nullptr);
-
-	}
-	*/
 
 	if (pos > sizeList || node == nullptr){
 		cout << "false" << endl;
@@ -132,31 +123,21 @@ bool DoublyLinkedList::replace(Node* old, Node* naw) {
 				j = i;
 				break;
 			}
-			
 		}
-
 		Node* saveNext = nodeAt(j)->getNext();
-		cout << saveNext << endl;
+		//cout << saveNext << endl;
 		Node* savePrev = nodeAt(j)->getPrev();
-		cout << savePrev << endl;
-
+		//cout << savePrev << endl;
 
 		naw->setNext(nodeAt(j)->getNext());
-		cout << naw->getNext() << endl;
+		//cout << naw->getNext() << endl;
 		naw->setPrev(nodeAt(j)->getPrev());
-		cout << naw->getPrev() << endl;
-
+		//cout << naw->getPrev() << endl;
 
 		saveNext->setPrev(naw);
-		cout << saveNext->getPrev() << endl;
+		//cout << saveNext->getPrev() << endl;
 		savePrev->setNext(naw);
-		cout << savePrev->getNext() << endl;
-
-
-		//nodeAt(j)->setNext(nullptr);
-		//nodeAt(j)->setPrev(nullptr);
-
-
+		//cout << savePrev->getNext() << endl;
 		cout << "The old node have been replaced with a new" << endl;
 		return true;
 	}
