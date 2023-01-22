@@ -23,7 +23,7 @@ int main()
     list.display_forward();
     list.add(n3, 1);
     list.display_forward();
-    list.remove(1);
+    list.remove(2);
     list.display_forward();
     list.display_backward();
     list.search(n4); //should be a false or -1 (error/invalid) 
@@ -33,6 +33,7 @@ int main()
     list.replace(n3, n4);
     list.display_forward();
     list.size();
+
     
 
 }

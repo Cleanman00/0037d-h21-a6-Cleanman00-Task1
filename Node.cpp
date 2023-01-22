@@ -96,21 +96,21 @@ bool DoublyLinkedList::remove(int pos) {
 	if (nodeAt(pos) == head) {
 		head->getNext()->setPrev(nullptr);
 		head = head->getNext();
-		--sizeList;
+		sizeList = sizeList - 1;
 		cout << "a node has been deleted" << endl;
 		return true;
 	}
 	if (pos == sizeList - 1 ) {
 		tail->getPrev()->setNext(nullptr);
 		tail = tail->getPrev();
-		--sizeList;
+		sizeList = sizeList - 1;
 		cout << "a node has been deleted" << endl;
 		return true;
 	}
 	Node* remove = nodeAt(pos);
 	remove->getNext()->setPrev(remove->getPrev());
 	remove->getPrev()->setNext(remove->getNext());
-	--sizeList;
+	sizeList = sizeList - 1;
 	cout << "a node has been deleted" << endl;
 	return true;
 	
@@ -121,34 +121,61 @@ bool DoublyLinkedList::replace(Node* old, Node* naw) {
 		cout << "false" << endl;
 		return false;
 	}
+	
 	else {
-		Node* saveNext = old->getNext();
-		Node* savePrev = old->getPrev();
+		int j = 0;
+		for (int i = 0; i < sizeList; i++)
+		{
+			cout << nodeAt(i) << endl;;
+			if (nodeAt(i)->getData() == old->getData()) {
+				cout << i << endl;
+				j = i;
+				break;
+			}
+			
+		}
 
-		naw->setNext(saveNext);
-		naw->setPrev(savePrev);
+		Node* saveNext = nodeAt(j)->getNext();
+		cout << saveNext << endl;
+		Node* savePrev = nodeAt(j)->getPrev();
+		cout << savePrev << endl;
 
-		old->setNext(nullptr);
-		old->setPrev(nullptr);
-		cout << "new node has replace the old" << endl;
+
+		naw->setNext(nodeAt(j)->getNext());
+		cout << naw->getNext() << endl;
+		naw->setPrev(nodeAt(j)->getPrev());
+		cout << naw->getPrev() << endl;
+
+
+		saveNext->setPrev(naw);
+		cout << saveNext->getPrev() << endl;
+		savePrev->setNext(naw);
+		cout << savePrev->getNext() << endl;
+
+
+		//nodeAt(j)->setNext(nullptr);
+		//nodeAt(j)->setPrev(nullptr);
+
+
+		cout << "The old node have been replaced with a new" << endl;
 		return true;
 	}
-}
+ }
 int DoublyLinkedList::search(Node* node) {
-
-	if (node == head) {
-		cout << "0" << endl;
+	
+	if (node == nullptr) {
+		cout << "The node dose not exist" << endl;
 		return 0;
 	}
 	for (int i = 0; i < sizeList; i++)
 	{
-
-		if (nodeAt(i)->getData() == (node->getData()) - 1) {
-			cout << "position " << i << endl;;
+		if (nodeAt(i)->getData() == node->getData()) {
+			cout << "index " << i << endl;
 			return i;
 		}
 	}
-	cout << "dose not exsists" << endl;
+			cout << "The node dose not exist" << endl;
+
 	return -1;
 }
 Node* DoublyLinkedList::nodeAt(int pos) {
